@@ -174,3 +174,7 @@ sequenceDiagram
 - If so, we do need access to the games in order to understand how integrate the wallets and estimate the time it will take to do it?
 
 - How many tokens/currencies do you need to develop? Please help clarify its nature, for example; stable value 1:1 USD.
+
+# Cost
+
+The cost will calculated after the clarify question has been answered.  
