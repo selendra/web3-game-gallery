@@ -72,21 +72,6 @@ A game gallery to will aggregate the all the game into one portal landing page. 
 
 ![](https://www.pokcas.com/wp-content/uploads/2021/04/Casiplay-Casino-New-Games-1280x720-1-1024x576.jpg)
 
-## Registration Process
-
-```mermaid
-sequenceDiagram
-    autonumber
-    actor A as User
-    participant B as Wallet App
-    participant C as Smart Contract
-
-    A ->> A: User download, install, and open the Wallet mobile app
-    A ->> B: User input their phone number to register in the app
-    B ->> C: Wallet registers user's phone in the contract
-    C ->> C: Contract bind user's phone number to wallet address
-```
-
 ## Payment Process
 
 ```mermaid
@@ -94,21 +79,21 @@ sequenceDiagram
     autonumber
 
     actor A as User
-    participant B as Wallet App
-    actor C as Counter
+    participant B as Wallet
+    actor C as Cashier
     participant D as Games
 
     rect rgba(255, 255, 255, 0.2)
     Note over A,C: Top-up process
-    #A ->> B: User send $CASH via their phone number, registered above
-    A ->> C: User transfer $CASH  to the counter with the registered phone number as remark to top-up the wallet
-    C ->> B: Counter transfers tokens to the user's wallet
+    A ->> B: User send $CASH via their phone number, registered above
+    A ->> C: User transfer money to cashier to top-up the wallet
+    C ->> B: Cashier transfers tokens to the user's wallet
     end
     rect rgba(255, 255, 255, 0.2)
         Note over B,D: Gaming process
         B ->> D: User use the token in the wallet to bet in the game
         alt LOST
-            D ->> C: If user lost, the game transfers bets to counter
+            D ->> C: If user lost, the game transfers bets to cashier
         else WON
             D ->> B: If the user won, the game transfers reward to
         end
@@ -116,8 +101,8 @@ sequenceDiagram
 
     rect rgba(255, 255, 255, 0.2)
     Note over A,C: Cash-out process
-    B ->> C: User send token from the wallet the counter
-    C ->> A: Counter transfers to money to the user
+    B ->> C: User send token from the wallet the cashier
+    C ->> A: Cashier transfers to money to the user
     end
 
 ```
@@ -127,7 +112,7 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     autonumber
-    actor A as Counter
+    actor A as Cashier
     actor B as Player
     actor C as Escrow Contract
     participant D as Game
@@ -141,7 +126,7 @@ sequenceDiagram
     alt win
         C ->> B: Transfer reward to player
     else lost
-        C ->> A: Transfer bet to counter
+        C ->> A: Transfer bet to cashier
     end
 ```
 
@@ -169,8 +154,10 @@ sequenceDiagram
 
 # Question to Clarify
 
-- Is the existing game system already in place?
+- Is the existing game system already in place? 
 
 - If so, we do need access to the games in order to understand how integrate the wallets and estimate the time it will take to do it?
 
-- How many tokens/currencies do you need to develop? Please help clarify its nature, for example; stable value 1:1 USD.
+- How many tokens/currencies do you need to develop? Please help clarify its nature, for example; stable value 1:1 USD. 
+
+
