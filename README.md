@@ -1,8 +1,30 @@
-# Digital Assets and Wallet App Development
+# Web3 Game 
+A digital assets wallet management development for eSport and Entertainment Industry.
 
-## Description
+## Description of Request
 
 A closed loop wallet system, which has the capacity to hold multi-currencies  as well as to receive funds from other source such as bank. 
+
+The wallet will have to be numbered or segregated by the Phone number of the customer. Customers phone number is the account number in the wallet. 
+
+After the wallet is segregated by individual wallet for customers one wallet will be for segregating the revenue
+
+The wallet has to be secure and protected from hacking etc.
+
+Capability to connect to a spot crypto exchange and the PSP at a later stage
+
+Example: 
+```mermaid
+flowchart LR
+    A[Users] -->|Send| B(USD)
+    F --> A
+    B -->|from Bank Account| C{Counter}
+    D --> F(Wallet)
+    C -->|Send| D(USD pegged)
+```
+
+
+# Proposition
 
 We propose that the wallet holds three different types of currencies/tokens; 
 
@@ -13,24 +35,6 @@ We propose that the wallet holds three different types of currencies/tokens;
 3. Game Token which will have the exchange rate in the future, the more people using and holding it. It could be a speculative investment with some utility. 
 
 Thus, there will not be any exchange rate for the first two, as the transfer is in the same currency from the customer’s bank account to the customers wallet. 
-
-The wallet will have to be numbered or segregated by the Phone number of the customer. Customers phone number is the account number in the wallet
-
-```mermaid
-flowchart LR
-    A[Users] -->|Send| B(USD)
-    B -->|from Bank Account| C{Counter}
-    C -->|Send| D(USD pegged)
-    D --> F(Wallet)
-    F --> A
-
-```
-
-After the wallet is segregated by individual wallets for 
-customers one wallet will be for segregating the revenue
-The wallet has to be secure and protected from hacking etc.
-
-Capability to connect to a spot crypto exchange and the PSP at a later stage
 
 
 ## Game Token Utility
@@ -78,7 +82,7 @@ sequenceDiagram
 
     rect rgba(255, 255, 255, 0.2)
     Note over A,C: Top-up process
-    A ->> B: User register phone number
+    A ->> B: User send $CASH via their phone number, registered above
     A ->> C: User transfer money to cashier to top-up the wallet
     C ->> B: Cashier transfers tokens to the user's wallet
     end
