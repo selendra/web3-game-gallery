@@ -1,31 +1,31 @@
-# A Web3 for eSport & Entertainment Industry 
+# A Web3 for eSport & Entertainment Industry
+
 A digital assets wallet management development for eSport and Entertainment Industry.
 
 ## Description of Request
 
-A closed loop wallet system, which has the capacity to hold multi-currencies  as well as to receive funds from other source such as bank. 
+A closed loop wallet system, which has the capacity to hold multi-currencies as well as to receive funds from other source such as bank.
 
-The wallet will be segregated by the Phone number of the customer. Customers phone number is the account ID of their wallet. 
+The wallet will be segregated by the Phone number of the customer. Customers phone number is the account ID of their wallet.
 
-One muster wallet will be used to collect revenue from all the wallets. 
+One muster wallet will be used to collect revenue from all the wallets.
 
 The wallet has to be secure and protected from hacking etc.
 
-Capability to connect to a spot crypto exchange and the PSP at a later stage. 
+Capability to connect to a spot crypto exchange and the PSP at a later stage.
 
 # Proposition
 
-We propose that the wallet holds three different types of currencies/tokens; 
+We propose that the wallet holds three different types of currencies/tokens;
 
-1. KHR pegged which is 1:1 exchange rate to U.S dollar. The customers could buy for their wallet by depositing KHR from their bank account to the wallet via payment service provider to the **Counter** 
+1. KHR pegged which is 1:1 exchange rate to U.S dollar. The customers could buy for their wallet by depositing KHR from their bank account to the wallet via payment service provider to the **Counter**
 
 2. USD pegged which is also 1:1 exchange rate to USD. Customer acquire this token same as above.
 
-3. Game Token which will have the exchange rate in the future, the more people using and holding it. It could be a speculative investment with some utility. 
+3. Game Token which will have the exchange rate in the future, the more people using and holding it. It could be a speculative investment with some utility.
 
-Thus, there will not be any exchange rate for the first two, as the transfer is in the same currency from the customer’s bank account to the customers wallet. 
+Example:
 
-Example: 
 ```mermaid
 flowchart LR
     A[Users] -->|Send| B(USD)
@@ -37,35 +37,48 @@ flowchart LR
 
 ## Game Token Utility
 
-- As Discount and VIP privilege: Users or customers who hold X amount of the Game Token, will be charged less in transaction fees within the game. 
+- As Discount and VIP privilege: Users or customers who hold X amount of the Game Token, will be charged less in transaction fees within the game.
 
-- As APY return: Users who hold the Game Token could also stake it to the game and earn APY in Game Token. 
+- As APY return: Users who hold the Game Token could also stake it to the game and earn APY in Game Token.
 
-- As Investment Asset: Users could cash out to other currencies or crypto at open exchange. 
+- As Investment Asset: Users could cash out to other currencies or crypto at open exchange.
 
 ## KHR and USD pegged utility
 
-Wallet users could utilized these pegged currency to bet in the game, pay each others, receive rewards, or cash out to their bank accounts outside of the wallet.  
+Wallet users could utilized these pegged currency to bet in the game, pay each others, receive rewards, or cash out to their bank accounts outside of the wallet.
 
 ## Benefits for Game Operators
 
 For Game Operator, the wallet allow them to hold customers' money within their phone, while the custom cash has already deposited to the Game Operator's bank account.
 
-The cash only return back to the customers when they need to cash out. Though, since the wallet will have the capacity to transfer among themselves and make payment outside, the customer will less likely to take the cash out, but use it for game or buy things at the Operators' partnership stores. 
+The cash only return back to the customers when they need to cash out. Though, since the wallet will have the capacity to transfer among themselves and make payment outside, the customer will less likely to take the cash out, but use it for game or buy things at the Operators' partnership stores.
 
 ## Benefits for Users
-
 
 ## Technology
 
 We will use blockchain to mint and burn the tokens needed. Mint is taken place, when customers transfer cash from their bank account to buy currency for wallet. Burn is taken place, when they transfer token back to their bank account.
 
-We will use smart contract to automate these tasks and some others 
-
+We will use smart contract to automate these tasks and some others
 
 ## Game Gallery Example
 
 ![](https://www.pokcas.com/wp-content/uploads/2021/04/Casiplay-Casino-New-Games-1280x720-1-1024x576.jpg)
+
+## Registration Process
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor A as User
+    participant B as Wallet App
+    participant C as Smart Contract
+
+    A ->> A: User download, install, and open the Wallet mobile app
+    A ->> B: User input their phone number to register in the app
+    B ->> C: Wallet registers user's phone in the contract
+    C ->> C: Contract bind user's phone number to wallet address
+```
 
 ## Payment Process
 
@@ -74,21 +87,21 @@ sequenceDiagram
     autonumber
 
     actor A as User
-    participant B as Wallet
-    actor C as Cashier
+    participant B as Wallet App
+    actor C as Counter
     participant D as Games
 
     rect rgba(255, 255, 255, 0.2)
     Note over A,C: Top-up process
-    A ->> B: User send $CASH via their phone number, registered above
-    A ->> C: User transfer money to cashier to top-up the wallet
-    C ->> B: Cashier transfers tokens to the user's wallet
+    #A ->> B: User send $CASH via their phone number, registered above
+    A ->> C: User transfer $CASH  to the counter with the registered phone number as remark to top-up the wallet
+    C ->> B: Counter transfers tokens to the user's wallet
     end
     rect rgba(255, 255, 255, 0.2)
         Note over B,D: Gaming process
         B ->> D: User use the token in the wallet to bet in the game
         alt LOST
-            D ->> C: If user lost, the game transfers bets to cashier
+            D ->> C: If user lost, the game transfers bets to counter
         else WON
             D ->> B: If the user won, the game transfers reward to
         end
@@ -96,8 +109,8 @@ sequenceDiagram
 
     rect rgba(255, 255, 255, 0.2)
     Note over A,C: Cash-out process
-    B ->> C: User send token from the wallet the cashier
-    C ->> A: Cashier transfers to money to the user
+    B ->> C: User send token from the wallet the counter
+    C ->> A: Counter transfers to money to the user
     end
 
 ```
@@ -107,7 +120,7 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     autonumber
-    actor A as Cashier
+    actor A as Counter
     actor B as Player
     actor C as Escrow Contract
     participant D as Game
@@ -121,7 +134,7 @@ sequenceDiagram
     alt win
         C ->> B: Transfer reward to player
     else lost
-        C ->> A: Transfer bet to cashier
+        C ->> A: Transfer bet to counter
     end
 ```
 
@@ -149,10 +162,8 @@ sequenceDiagram
 
 # Question to Clarify
 
-- Is the existing game system already in place? 
+- Is the existing game system already in place?
 
 - If so, we do need access to the games in order to understand how integrate the wallets and estimate the time it will take to do it?
 
-- How many tokens/currencies do you need to develop? Please help clarify its nature, for example; stable value 1:1 USD. 
-
-
+- How many tokens/currencies do you need to develop? Please help clarify its nature, for example; stable value 1:1 USD.
