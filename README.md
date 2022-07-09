@@ -1,28 +1,17 @@
-# Web3 Game 
+# A Web3 for eSport & Entertainment Industry 
 A digital assets wallet management development for eSport and Entertainment Industry.
 
 ## Description of Request
 
 A closed loop wallet system, which has the capacity to hold multi-currencies  as well as to receive funds from other source such as bank. 
 
-The wallet will have to be numbered or segregated by the Phone number of the customer. Customers phone number is the account number in the wallet. 
+The wallet will be segregated by the Phone number of the customer. Customers phone number is the account ID of their wallet. 
 
-After the wallet is segregated by individual wallet for customers one wallet will be for segregating the revenue
+One muster wallet will be used to collect revenue from all the wallets. 
 
 The wallet has to be secure and protected from hacking etc.
 
-Capability to connect to a spot crypto exchange and the PSP at a later stage
-
-Example: 
-```mermaid
-flowchart LR
-    A[Users] -->|Send| B(USD)
-    F --> A
-    B -->|from Bank Account| C{Counter}
-    D --> F(Wallet)
-    C -->|Send| D(USD pegged)
-```
-
+Capability to connect to a spot crypto exchange and the PSP at a later stage. 
 
 # Proposition
 
@@ -36,6 +25,15 @@ We propose that the wallet holds three different types of currencies/tokens;
 
 Thus, there will not be any exchange rate for the first two, as the transfer is in the same currency from the customer’s bank account to the customers wallet. 
 
+Example: 
+```mermaid
+flowchart LR
+    A[Users] -->|Send| B(USD)
+    F --> A
+    B -->|from Bank Account| C{Counter}
+    D --> F(Wallet)
+    C -->|Send| D(USD pegged)
+```
 
 ## Game Token Utility
 
