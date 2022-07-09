@@ -57,3 +57,25 @@ sequenceDiagram
         C ->> A: Transfer bet to cashier
     end
 ```
+
+## Gallery Interaction
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor A as Player
+    participant B as Gallery
+    participant C as Contract
+    participant D as Game
+
+    A ->> B: Connect wallet
+    A ->> B: Choose game
+    B -->> A: Request bet deposit
+    A -->> B: Deposit bet
+    B -->> C: Regiseter user in bet pool
+    C -->> D: Start game for user
+    D -->> C: Report game result
+    alt WON
+        C ->> A: Transfer reward
+    end
+```
