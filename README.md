@@ -79,3 +79,7 @@ sequenceDiagram
         C ->> A: Transfer reward
     end
 ```
+
+## Game Gallery
+
+![](https://www.pokcas.com/wp-content/uploads/2021/04/Casiplay-Casino-New-Games-1280x720-1-1024x576.jpg)
