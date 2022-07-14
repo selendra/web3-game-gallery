@@ -1,4 +1,4 @@
-# A Web3 for eSport & Entertainment Industry 
+# Web3 for eSport & Entertainment Industry 
 A digital assets wallet management development for eSport and Entertainment Industry.
 
 ## Description of Request
